@@ -17,7 +17,8 @@ while run:
     input_ids = tokenizer.encode(prompt, return_tensors="tf")
 
     # Generate text based on the input prompt
-    output = model.generate(input_ids, max_length=50, num_return_sequences=1, no_repeat_ngram_size=2, top_k=50, top_p=0.95)
+    output = model.generate(input_ids, max_length=50, num_return_sequences=1, no_repeat_ngram_size=2, top_k=50,
+                            top_p=0.95)
 
     # Decode and print the generated text
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
